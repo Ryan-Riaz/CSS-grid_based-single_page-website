@@ -1,0 +1,154 @@
+:root {
+	--shadow: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
+}
+.item {
+	background-color: #ccc;
+	background-size: cover;
+	color: #fff;
+}
+
+.item article,
+.item header {
+	padding: 30px;
+}
+
+.item-mini article {
+	padding: 30px 20px;
+}
+
+.item article h1,
+.item article p {
+	padding: 0px;
+	margin: 0px;
+	font-weight: 300;
+}
+
+.item article h1 {
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+.item article p {
+	font-size: 14px;
+}
+
+.item-mini article h1 {
+	font-size: 20px;
+	margin-bottom: 7px;
+}
+.item-mini article p {
+	font-size: 12px;
+}
+
+span.date {
+	background-color: rgba(9, 206, 178, 0.58);
+	padding: 2px 7px;
+	margin-left: 2px;
+	border-radius: 2px;
+}
+
+.s1 header h1 {
+	font-size: 60px;
+	background: -webkit-linear-gradient(#d0fdc3, #80ff9c);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	line-height: 1em;
+	font-weight: 700;
+}
+
+main {
+	display: grid;
+	height: 100vh;
+	row-gap: 1px;
+	column-gap: 1px;
+	grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+.item {
+	display: grid;
+	align-items: end;
+}
+.s1 {
+	grid-row: 1/3;
+	background-image: var(--shadow), url("../imgs/bg-1.jpg");
+	background-size: cover;
+}
+.s1 header {
+	align-self: start;
+}
+.s1 h1 {
+	color: #fff;
+	padding: 20px 80px;
+}
+.s2 {
+	background-image: var(--shadow), url("../imgs/bg-2.jpg");
+	background-size: cover;
+}
+.s3 {
+	background-image: var(--shadow), url("../imgs/bg-3.jpg");
+	background-size: cover;
+}
+.s4 {
+	background-image: var(--shadow), url("../imgs/bg-4.jpg");
+	background-size: cover;
+}
+.s5 {
+	grid-column: 2/-1;
+	background-image: var(--shadow), url("../imgs/bg-5.jpg");
+	background-size: cover;
+}
+
+/* Responsiveness */
+
+@media (max-width: 1275px) {
+	main {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr;
+	}
+	.s1 header h1 {
+		font-size: 45px;
+		padding: 15px;
+	}
+	.s4 {
+		grid-column: 2/-1;
+	}
+	.s5 {
+		grid-column: 1/-1;
+		height: 300px;
+	}
+}
+
+@media (max-width: 768px) {
+	main {
+		grid-template-columns: 1fr;
+		height: auto;
+	}
+	.s1,
+	.s5,
+	.s2,
+	.s3,
+	.s4 {
+		grid-column: 1/1;
+		width: 100%;
+		height: 50vh;
+	}
+	.s1 header h1 {
+		font-size: 40px;
+		max-width: 380px;
+		text-align: center;
+		padding: 50px;
+	}
+	.item article,
+	.item header {
+		padding: 10px;
+	}
+
+	.item article h1 {
+		font-size: 20px;
+	}
+}
